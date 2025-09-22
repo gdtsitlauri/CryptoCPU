@@ -1,5 +1,5 @@
 # CryptoCPU Project
-**Note:** The repository also includes the full English paper (`paper.docx`) describing the project in detail.
+**Note:** The repository also includes the full paper (`paper.docx`) describing the project in detail.
 
 This repository contains the implementation and testing framework of **CryptoCPU**, a MIPS-like processor with an integrated AES-128 decryption stage in the pipeline.  
 The goal of CryptoCPU is to execute **only encrypted programs**, ensuring that no plaintext instructions ever appear in memory or on FPGA buses.
