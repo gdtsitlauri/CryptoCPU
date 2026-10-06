@@ -1,0 +1,5 @@
+no forwarding from EX/MEM (operand a)                   caught in 500/500 runs (100%)
+no load-use stall                                       caught in 405/500 runs (81%)
+no squash of the instruction behind a taken branch      caught in 495/500 runs (99%)
+
+3/3 mutants caught

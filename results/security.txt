@@ -1,0 +1,15 @@
+program      blocks | E1 distinct blocks       | E2 wrong key | E3 bit flips: trap/corrupt/same/TO | E4 swaps: trap/corrupt/same/TO
+signature         4 | plain 5, ECB 5, XEX 1024 | trap       |   500 /     0 /     0 /     0       |    6 /    0 /    0 /    0
+loop_sum          3 | plain 4, ECB 4, XEX 1024 | trap       |   500 /     0 /     0 /     0       |    3 /    0 /    0 /    0
+fib               7 | plain 8, ECB 8, XEX 1024 | trap       |   500 /     0 /     0 /     0       |   21 /    0 /    0 /    0
+bubble            6 | plain 7, ECB 7, XEX 1024 | trap       |   500 /     0 /     0 /     0       |   15 /    0 /    0 /    0
+strings           6 | plain 7, ECB 7, XEX 1024 | trap       |   499 /     0 /     0 /     1       |   15 /    0 /    0 /    0
+muldiv            9 | plain 10, ECB 10, XEX 1024 | trap       |   497 /     0 /     0 /     3       |   36 /    0 /    0 /    0
+aes               3 | plain 4, ECB 4, XEX 1024 | trap       |   500 /     0 /     0 /     0       |    3 /    0 /    0 /    0
+hazards           8 | plain 9, ECB 9, XEX 1024 | trap       |   499 /     0 /     0 /     1       |   28 /    0 /    0 /    0
+sieve             9 | plain 10, ECB 10, XEX 1024 | trap       |   500 /     0 /     0 /     0       |   36 /    0 /    0 /    0
+matmul           10 | plain 11, ECB 11, XEX 1024 | trap       |   500 /     0 /     0 /     0       |   45 /    0 /    0 /    0
+
+TOTAL wrong key (10 programs): trap 10, corrupt 0, same 0, timeout 0
+TOTAL bit flips (5000): trap 99.9%, silent corruption 0.0%, no effect 0.0%, timeout 0.1%
+TOTAL block swaps (208): trap 100.0%, silent corruption 0.0%, no effect 0.0%, timeout 0.0%

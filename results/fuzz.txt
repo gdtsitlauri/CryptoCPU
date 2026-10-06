@@ -1,0 +1,2 @@
+5000 runs over 1000 random programs, 0 mismatches
+final status of runs: halt 4455, trap-mem 430, trap-overflow 115

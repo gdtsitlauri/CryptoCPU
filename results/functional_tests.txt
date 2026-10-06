@@ -1,0 +1,15 @@
+aes              PASS status=halt          retired=11       cycles=68        cpi=6.182 ic_hit=12 ic_miss=3 cancelled=0 decrypted=3 leaks=0
+bubble           PASS status=halt          retired=957      cycles=1628      cpi=1.701 ic_hit=1254 ic_miss=15 cancelled=9 decrypted=6 leaks=0
+fib              PASS status=halt          retired=19731    cycles=36609     cpi=1.855 ic_hit=29566 ic_miss=22 cancelled=15 decrypted=7 leaks=0
+hazards          PASS status=halt          retired=37       cycles=179       cpi=4.838 ic_hit=45 ic_miss=10 cancelled=2 decrypted=8 leaks=0
+loop_sum         PASS status=halt          retired=408      cycles=755       cpi=1.850 ic_hit=507 ic_miss=103 cancelled=100 decrypted=3 leaks=0
+matmul           PASS status=halt          retired=1146     cycles=1554      cpi=1.356 ic_hit=1273 ic_miss=10 cancelled=0 decrypted=10 leaks=0
+muldiv           PASS status=halt          retired=33       cycles=173       cpi=5.242 ic_hit=34 ic_miss=9 cancelled=0 decrypted=9 leaks=0
+sieve            PASS status=halt          retired=3174     cycles=5349      cpi=1.685 ic_hit=4378 ic_miss=22 cancelled=13 decrypted=9 leaks=0
+signature        PASS status=halt          retired=16       cycles=81        cpi=5.062 ic_hit=16 ic_miss=5 cancelled=1 decrypted=4 leaks=0
+strings          PASS status=halt          retired=171      cycles=377       cpi=2.205 ic_hit=202 ic_miss=19 cancelled=13 decrypted=6 leaks=0
+trap_fetch       PASS status=trap-fetch    retired=3        cycles=27        cpi=9.000 ic_hit=4 ic_miss=2 cancelled=1 decrypted=1 leaks=0
+trap_misaligned  PASS status=trap-mem      retired=2        cycles=23        cpi=11.500 ic_hit=4 ic_miss=2 cancelled=1 decrypted=1 leaks=0
+trap_overflow    PASS status=trap-overflow retired=8        cycles=59        cpi=7.375 ic_hit=10 ic_miss=3 cancelled=0 decrypted=3 leaks=0
+
+13/13 programs passed

@@ -1,0 +1,16 @@
+FIPS-197 Appendix B encrypt        PASS
+FIPS-197 Appendix B decrypt        PASS
+FIPS-197 Appendix C.1 encrypt      PASS
+FIPS-197 Appendix C.1 decrypt      PASS
+SP 800-38A F.1.1 block 1 encrypt   PASS
+SP 800-38A F.1.1 block 1 decrypt   PASS
+SP 800-38A F.1.1 block 2 encrypt   PASS
+SP 800-38A F.1.1 block 2 decrypt   PASS
+SP 800-38A F.1.1 block 3 encrypt   PASS
+SP 800-38A F.1.1 block 3 decrypt   PASS
+SP 800-38A F.1.1 block 4 encrypt   PASS
+SP 800-38A F.1.1 block 4 decrypt   PASS
+XEX round trip (10000 blocks)      PASS
+XEX same block, two addresses      PASS
+
+all AES known-answer tests passed
