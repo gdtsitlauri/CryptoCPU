@@ -108,4 +108,4 @@ The main improvements are standard subset decoding, separate keys,
 address-dependent encryption and comparison against a reference interpreter.
 Assembler alignment, malformed key files and incomplete tamper-result
 comparison have targeted regression coverage. The [archive](../legacy/README.md)
-retains the original implementation and earlier reviews.
+retains the 2025 implementation; [CHANGES.md](../legacy/CHANGES.md) explains the differences.

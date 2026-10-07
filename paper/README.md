@@ -1,12 +1,12 @@
 # Design and implementation of an encrypted instruction set processor on FPGA
 
-George David Tsitlauri — **BSc thesis, 2025**, University of Thessaly.
+George David Tsitlauri, University of Thessaly, 2026.
 
 - [cryptocpu.pdf](cryptocpu.pdf): the paper in IEEE conference style (three pages and references).
 - [cryptocpu.tex](cryptocpu.tex): editable LaTeX source.
 - [references.bib](references.bib): bibliography.
 
-The paper presents the CryptoCPU BSc thesis, 2025. Its verification and
+The paper presents CryptoCPU, which builds on the 2025 BSc thesis. Its verification and
 performance tables come from the [recorded host run](../results/host/README.md),
 whose manifest retains the verification dates and source hashes. Section V gives
 the FPGA implementation of the thesis prototype on an Artix-7, with resource
@@ -15,7 +15,7 @@ estimates for the present configuration.
 The document uses the standard `IEEEtran` conference class on A4, two columns and
 numbered citations, following the
 [IEEE template guidance](https://conferences.ieeeauthorcenter.ieee.org/write-your-paper/authoring-tools-and-templates/).
-The paper accompanies the thesis; IEEE formatting does not indicate publication or acceptance.
+IEEE formatting does not indicate publication or acceptance.
 
 ## Build
 
@@ -41,4 +41,4 @@ pdflatex cryptocpu
 ```
 
 Generated auxiliary files are ignored. The checked-in PDF is the reading copy;
-the original thesis is in [legacy](../legacy/README.md).
+the 2025 thesis sources are in [legacy](../legacy/README.md).

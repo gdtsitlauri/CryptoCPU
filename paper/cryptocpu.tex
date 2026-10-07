@@ -10,7 +10,7 @@
 \hypersetup{
   pdftitle={Design and implementation of an encrypted instruction set processor on FPGA},
   pdfauthor={George David Tsitlauri},
-  pdfsubject={CryptoCPU, BSc thesis, 2025},
+  pdfsubject={CryptoCPU, 2026},
   pdfkeywords={encrypted instructions, AES, XEX, processor, FPGA, HLS}
 }
 
@@ -20,7 +20,7 @@
 \author{\IEEEauthorblockN{George David Tsitlauri}
 \IEEEauthorblockA{Department of Informatics and Telecommunications\\
 University of Thessaly, Greece\\
-BSc thesis, 2025}}
+October 2026}}
 \maketitle
 
 \begin{abstract}
@@ -33,10 +33,10 @@ randomized runs agree with a reference interpreter. Three injected pipeline
 faults are detected. At the eight-line cache design point, encryption increases
 summed modeled cycles across ten benchmarks by 1.5\%, although individual
 overhead reaches 133.8\% for a short program. Ciphertext experiments characterize
-execution failures without asserting authentication. The thesis prototype was
-implemented with Vitis HLS and Vivado on an Artix-7 FPGA and executed an
-encrypted program on the board; resource estimates are given for this
-configuration.
+execution failures without asserting authentication. An earlier ECB prototype
+from the author's BSc thesis was implemented with Vitis HLS and Vivado on an
+Artix-7 FPGA and executed an encrypted program on the board; resource
+estimates are given for CryptoCPU.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -48,8 +48,8 @@ CryptoCPU studies encrypted execution with a decryption stage between fetch
 and decode. Its central idea, originating in the 2025 BSc thesis~\cite{thesis},
 is to retain ciphertext in instruction storage, decrypt blocks inside the core,
 and cache recovered instructions so that loops amortize the cryptographic work.
-The six-stage pipeline, separate memories and assembly/encryption toolchain
-preserve this approach. Standard subset encodings, separate keys and reference
+The design comprises a six-stage pipeline, separate instruction and data
+memories and an assembly/encryption toolchain. Standard subset encodings, separate keys and reference
 state comparison keep the implementation precise and verifiable.
 
 AES supplies the block cipher~\cite{aes}. ECB preserves equality between
@@ -58,8 +58,7 @@ Tweakable encryption provides context-dependent transforms~\cite{xex};
 CryptoCPU uses XEX with an AES-derived tweak for each nonce and block address.
 The contribution is the executable architecture and reproducible evaluation
 of its behavior and modeled cost, not a new cipher or authentication scheme.
-The repository preserves source, tests, verification manifests and the
-original thesis documents.
+The repository contains the source, tests and verification manifests.
 
 \section{Architecture and Protection Boundary}
 \subsection{Pipeline and Memory Organization}
@@ -326,7 +325,7 @@ decrypted instruction blocks with AES-128 in ECB mode.
 \small
 \begin{tabular}{@{}lrr@{}}
 \toprule
-Quantity & Thesis prototype & This configuration \\
+Quantity & Thesis prototype & CryptoCPU \\
  & (measured) & (estimated) \\
 \midrule
 Clock & 75~MHz & 75~MHz \\
@@ -339,7 +338,7 @@ Power (Vivado estimate) & ${\approx}0.6$~W & 0.6--0.7~W \\
 \end{tabular}
 \end{table}
 
-\subsection{Estimated Cost of This Configuration}
+\subsection{Estimated Cost of CryptoCPU}
 The estimates in Table~\ref{tab:fpga} start from the prototype and add the
 differences in the datapath. The prototype's AES core already encrypts and
 decrypts, so XEX adds mainly a 128-bit tweak register, two 128-bit XOR stages
@@ -347,17 +346,17 @@ and the multiplexing that lets the core derive the tweak, well under 1\% of the
 XC7A200T's 134,600 LUTs. The wider subset adds a 32-bit divider, HI/LO and
 byte/halfword alignment, about 2--3\% more; the multiplier, as in the
 prototype, maps to DSP slices. The prototype kept code and data in one
-1~KiB memory with a four-line instruction cache; the present 16~KiB
+1~KiB memory with a four-line instruction cache; CryptoCPU's 16~KiB
 instruction and 16~KiB data memories need about eight further 36-Kbit block
 RAMs (2\% of 365), and the eight-line decrypted cache adds a few hundred
 flip-flops. The clock target follows the prototype, with the divider scheduled
 over several cycles so that the AES round remains the critical path. These
-figures are estimates, not reports of an implementation of this configuration.
+figures are estimates, not reports of an implementation of CryptoCPU.
 
 \section{Conclusion}
-CryptoCPU preserves the original encrypted-execution idea through separate
-keys, address-dependent encryption, standard subset decoding and stronger
-verification. The evaluated programs agree with the reference, while a small
+CryptoCPU realizes encrypted execution with separate keys, address-dependent
+encryption, standard subset decoding and verification against a reference
+interpreter. The evaluated programs agree with the reference, while a small
 decrypted cache amortizes modeled AES cost through reuse. Authentication and
 physical protection remain distinct concerns.
 
