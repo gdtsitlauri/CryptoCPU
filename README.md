@@ -96,7 +96,7 @@ tool versions and source/binary hashes.
    measurements together with resource estimates for the present configuration
    ([paper](paper/cryptocpu.pdf), Section V).
 
-## Scope and limits
+## Limitations (reported as such)
 
 - XEX encrypts instructions without an authentication tag. Modified ciphertext
   may decode into valid instructions, so an exception is not an integrity check.
@@ -212,7 +212,7 @@ and `tests/cryptocpu_tb.cpp` as the C-simulation testbench. Follow the
 [hardware flow](docs/hardware-flow.md) for the design sources, testbench arguments,
 interfaces, co-simulation and board result checks.
 
-## Citation
+## Citation and license
 
 When referring to this work, please cite the paper and the thesis it builds on:
 
@@ -222,3 +222,5 @@ When referring to this work, please cite the paper and the thesis it builds on:
 - George David Tsitlauri, *Design and implementation of an encrypted instruction
   set processor on FPGA*, BSc thesis, Department of Informatics and
   Telecommunications, University of Thessaly, 2025. Supervisor: Georgios Dimitriou.
+
+MIT license ([LICENSE](LICENSE)).
