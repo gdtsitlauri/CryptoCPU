@@ -330,27 +330,29 @@ Quantity & Thesis prototype & This configuration \\
  & (measured) & (estimated) \\
 \midrule
 Clock & 75~MHz & 75~MHz \\
-LUTs & ${\approx}15\%$ & 15--17\% \\
+LUTs & ${\approx}15\%$ & 17--19\% \\
 Flip-flops & ${\approx}10\%$ & 10--11\% \\
-Block RAM & ${\approx}12\%$ & ${\le}12\%$ \\
+Block RAM & ${\approx}12\%$ & 13--15\% \\
 DSP slices & ${\approx}5\%$ & ${\approx}5\%$ \\
-Power (Vivado estimate) & ${\approx}0.6$~W & ${\approx}0.6$~W \\
+Power (Vivado estimate) & ${\approx}0.6$~W & 0.6--0.7~W \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Estimated Cost of This Configuration}
-The estimates in Table~\ref{tab:fpga} start from the prototype and account for
-the differences in the datapath. The pipeline, register file, forwarding and
-memory interfaces are unchanged. XEX adds one AES encryption per instruction
-block to derive the tweak, together with a 128-bit tweak register and two
-128-bit XOR stages; when the tweak reuses the iterative AES round logic, the
-added area is mainly registers and multiplexing, about 1--2\% of the device's
-LUTs. The decrypted cache of eight 16-byte lines is smaller than the
-prototype's 4~KiB instruction cache, so block-RAM use does not grow. The
-critical path remains in the AES round and the execute stage, so the clock
-estimate follows the prototype. These figures are estimates, not reports of
-an implementation of this configuration.
+The estimates in Table~\ref{tab:fpga} start from the prototype and add the
+differences in the datapath. The prototype's AES core already encrypts and
+decrypts, so XEX adds mainly a 128-bit tweak register, two 128-bit XOR stages
+and the multiplexing that lets the core derive the tweak, well under 1\% of the
+XC7A200T's 134,600 LUTs. The wider subset adds a 32-bit divider, HI/LO and
+byte/halfword alignment, about 2--3\% more; the multiplier, as in the
+prototype, maps to DSP slices. The prototype kept code and data in one
+1~KiB memory with a four-line instruction cache; the present 16~KiB
+instruction and 16~KiB data memories need about eight further 36-Kbit block
+RAMs (2\% of 365), and the eight-line decrypted cache adds a few hundred
+flip-flops. The clock target follows the prototype, with the divider scheduled
+over several cycles so that the AES round remains the critical path. These
+figures are estimates, not reports of an implementation of this configuration.
 
 \section{Conclusion}
 CryptoCPU preserves the original encrypted-execution idea through separate
