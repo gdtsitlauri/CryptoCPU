@@ -1,0 +1,10 @@
+unchanged final state        PASS
+HI-only change               PASS
+LO-only change               PASS
+end-PC-only change           PASS
+general register change      PASS
+data-memory-only change      PASS
+illegal instruction          PASS
+nonterminating program       PASS
+
+8/8 security regressions passed

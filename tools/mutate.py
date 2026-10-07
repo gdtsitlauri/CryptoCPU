@@ -7,6 +7,7 @@ the core and check that random differential testing catches them.
 A mutant is caught when at least one run disagrees with the reference.
 """
 import argparse
+import os
 import shlex
 import subprocess
 import sys
@@ -41,10 +42,13 @@ def main():
             sys.exit(f"mutant '{name}': pattern not found in src/cryptocpu.cpp")
         (out / "cryptocpu.cpp").write_text(src.replace(old, new), encoding="utf-8")
         exe = out / f"m{i}.exe"
-        cmd = shlex.split(a.cxx) + ["-std=c++17", "-O2", "-Wno-unknown-pragmas", f"-I{ROOT / 'src'}",
+        compiler = [a.cxx] if Path(a.cxx).is_file() else shlex.split(a.cxx)
+        cmd = compiler + ["-std=c++17", "-O2", "-Wno-unknown-pragmas", f"-I{ROOT / 'src'}",
                                      str(ROOT / "src" / "aes128.cpp"), str(ROOT / "src" / "xex.cpp"),
                                      str(out / "cryptocpu.cpp"), str(ROOT / "ref" / "isa_ref.cpp"),
                                      str(ROOT / "tests" / "cryptocpu_tb.cpp"), "-o", str(exe)]
+        if os.name == "nt":
+            cmd.append("-static")  # standalone MinGW executables, without runtime DLL setup
         subprocess.run(cmd, check=True, capture_output=True)
         r = subprocess.run([sys.executable, str(ROOT / "tools" / "fuzz.py"), "--count", str(a.count),
                             "--seed", str(a.seed), "--bin", str(exe)], capture_output=True, text=True)

@@ -13,10 +13,15 @@
 // Without --keys the fixed test keys of the testbench are used.
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+#include <fstream>
+#include <sstream>
 #include "../tests/tb_common.h"
 
 static bool parse_words(const char *hex, uint32_t *out, int n) {
     if ((int)strlen(hex) != 8 * n) return false;
+    for (int i = 0; i < 8 * n; i++)
+        if (!isxdigit((unsigned char)hex[i])) return false;
     for (int i = 0; i < n; i++) {
         char buf[9];
         memcpy(buf, hex + 8 * i, 8);
@@ -29,18 +34,30 @@ static bool parse_words(const char *hex, uint32_t *out, int n) {
 }
 
 static bool load_keys(const char *path, KeyRegisters *k) {
-    FILE *f = fopen(path, "r");
+    std::ifstream f(path);
     if (!f) return false;
-    char name[32], val[80];
-    int got = 0;
-    while (fscanf(f, "%31s %79s", name, val) == 2) {
-        if (!strcmp(name, "k_code")) got += parse_words(val, k->k_code, 4);
-        else if (!strcmp(name, "k_tweak")) got += parse_words(val, k->k_tweak, 4);
-        else if (!strcmp(name, "k_data")) got += parse_words(val, k->k_data, 4);
-        else if (!strcmp(name, "nonce")) got += parse_words(val, k->nonce, 2);
+    KeyRegisters parsed = {};
+    unsigned seen = 0;
+    std::string line;
+    while (std::getline(f, line)) {
+        std::istringstream fields(line);
+        std::string name, val, extra;
+        if (!(fields >> name)) continue;  // blank lines are harmless
+        if (!(fields >> val) || (fields >> extra)) return false;
+        unsigned bit;
+        uint32_t *dest;
+        int words = 4;
+        if (name == "k_code") { bit = 1; dest = parsed.k_code; }
+        else if (name == "k_tweak") { bit = 2; dest = parsed.k_tweak; }
+        else if (name == "k_data") { bit = 4; dest = parsed.k_data; }
+        else if (name == "nonce") { bit = 8; dest = parsed.nonce; words = 2; }
+        else return false;
+        if ((seen & bit) || !parse_words(val.c_str(), dest, words)) return false;
+        seen |= bit;
     }
-    fclose(f);
-    return got == 4;
+    if (f.bad() || seen != 15) return false;
+    *k = parsed;  // commit only after all four distinct fields passed validation
+    return true;
 }
 
 static bool write_hex(const char *path, const std::vector<uint32_t> &w) {
@@ -52,12 +69,12 @@ static bool write_hex(const char *path, const std::vector<uint32_t> &w) {
 }
 
 int main(int argc, char **argv) {
-    if (argc < 4) {
+    if ((argc != 4 && argc != 6) || (argc == 6 && strcmp(argv[4], "--keys"))) {
         fprintf(stderr, "usage: %s encrypt|decrypt <in.hex> <out.hex> [--keys keys.txt]\n", argv[0]);
         return 2;
     }
     KeyRegisters keys = TEST_KEYS;
-    if (argc >= 6 && !strcmp(argv[4], "--keys") && !load_keys(argv[5], &keys)) {
+    if (argc == 6 && !load_keys(argv[5], &keys)) {
         fprintf(stderr, "cannot read keys from %s\n", argv[5]);
         return 2;
     }

@@ -8,8 +8,8 @@
 // different ciphertexts, and a block moved to another address decrypts to
 // unrelated data. Compared with CTR, a flipped ciphertext bit does not flip a
 // chosen plaintext bit: the whole block decrypts to unpredictable data.
-// T depends only on the address, so hardware computes it while the block is
-// being read from memory.
+// T depends on the nonce and block index. Overlapping its calculation with a
+// memory read is an implementation choice, not a timing guarantee of this model.
 #include "cryptocpu.h"
 
 void xex_tweak(const AesRoundKeys *k_tweak, const uint32_t nonce[2], uint32_t block_index,

@@ -1,10 +1,11 @@
-// CryptoCPU v2: a MIPS32-subset processor that executes only encrypted programs.
+// CryptoCPU: a MIPS32-subset model with encrypted instruction execution.
 //
 // Instruction memory holds the program encrypted block by block with AES-128 in
 // XEX mode, tweaked by the block address. Blocks are decrypted inside the core
 // (Decrypt stage) into an on-chip decrypted-instruction cache; plaintext
-// instructions never leave the core. Keys live in on-chip key registers, loaded
-// through the key port (eFUSE/BBRAM on an FPGA), never in instruction or data memory.
+// instructions are not written back to instruction/data memory by the model.
+// Keys are separate top-level inputs. The FPGA integration defines their storage,
+// provisioning and access controls. Plaintext mode is a performance baseline.
 #ifndef CRYPTOCPU_H
 #define CRYPTOCPU_H
 
@@ -12,7 +13,7 @@
 #include "aes128.h"
 
 // ---------------------------------------------------------------------------
-// Memory map (MARS default layout, so MARS-assembled programs run unchanged)
+// MARS memory-map bases; programs must use the supported subset without delay slots.
 // ---------------------------------------------------------------------------
 #define TEXT_BASE      0x00400000u
 #define DATA_BASE      0x10010000u
@@ -24,7 +25,7 @@
 #define ICACHE_MAX_LINES 64
 
 // ---------------------------------------------------------------------------
-// Custom instructions (opcodes unused by MIPS32)
+// Private AES encodings in this subset; these are not general MIPS extensions.
 //   aesenc $rt, $rs : M[GPR[rt] .. +15] = AES_Enc(Kdata, M[GPR[rs] .. +15])
 //   aesdec $rt, $rs : M[GPR[rt] .. +15] = AES_Dec(Kdata, M[GPR[rs] .. +15])
 // ---------------------------------------------------------------------------
@@ -42,7 +43,7 @@ enum CpuStatus {
     ST_TIMEOUT = 7        // cycle budget exhausted
 };
 
-// On-chip key registers (written once through the key port).
+// Key inputs, separate from the instruction and data memory images.
 struct KeyRegisters {
     uint32_t k_code[4];   // decrypts instruction blocks
     uint32_t k_tweak[4];  // derives the per-block XEX tweak
@@ -51,11 +52,11 @@ struct KeyRegisters {
 };
 
 // Micro-architecture parameters. The defaults model the design point used in
-// the paper; the testbench varies them for the sensitivity study.
+// model benchmarks; the testbench varies them for the sensitivity study.
 struct CpuConfig {
     int icache_lines;   // decrypted-instruction cache lines (power of two, <= 64)
     int mem_latency;    // cycles to read one 16-byte block from instruction memory
-    int aes_latency;    // cycles of the iterative AES unit (one round per cycle = 11)
+    int aes_latency;    // modeled AES service latency; default 11, not an RTL measurement
     int encrypted;      // 0: plaintext image, no decryption (baseline for overhead)
     uint64_t max_cycles;
 };

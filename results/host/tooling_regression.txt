@@ -1,0 +1,11 @@
+test_explicit_alignment_moves_labels_at_the_cursor (__main__.AlignmentTests.test_explicit_alignment_moves_labels_at_the_cursor) ... ok
+test_inline_word_and_half_labels (__main__.AlignmentTests.test_inline_word_and_half_labels) ... ok
+test_standalone_labels_and_forward_reference (__main__.AlignmentTests.test_standalone_labels_and_forward_reference) ... ok
+test_custom_keys_round_trip_and_differ_from_defaults (__main__.KeyLoadingTests.test_custom_keys_round_trip_and_differ_from_defaults) ... ok
+test_invalid_cli_never_falls_back_to_test_keys (__main__.KeyLoadingTests.test_invalid_cli_never_falls_back_to_test_keys) ... ok
+test_invalid_key_files_are_rejected_without_overwriting_output (__main__.KeyLoadingTests.test_invalid_key_files_are_rejected_without_overwriting_output) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.090s
+
+OK

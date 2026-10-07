@@ -10,38 +10,19 @@
 // Outcomes are classified against the untampered run:
 //   trap      - the core stopped with an exception (illegal instruction, bad fetch, ...)
 //   corrupt   - the run halted normally but the final state differs (silent corruption)
-//   same      - the run halted with the same final state (the flip was never executed)
+//   same      - the run halted with the same architectural state and data memory
+//               (this alone does not establish whether the modified block executed)
 //   timeout   - no halt within 20x the normal cycle count
 #include <stdlib.h>
 #include <map>
 #include <set>
-#include "tb_common.h"
+#include "security_common.h"
 
 struct Tally {
     int trap = 0, corrupt = 0, same = 0, timeout = 0;
     void add(int c) { (c == 0 ? trap : c == 1 ? corrupt : c == 2 ? same : timeout)++; }
     int total() const { return trap + corrupt + same + timeout; }
 };
-
-static bool same_state(const CpuState &a, const std::vector<uint32_t> &ma, const CpuState &b,
-                       const std::vector<uint32_t> &mb) {
-    if (a.status != b.status) return false;
-    for (int i = 0; i < 32; i++)
-        if (a.regs[i] != b.regs[i]) return false;
-    return ma == mb;
-}
-
-static int classify(const std::vector<uint32_t> &imem, const std::vector<uint32_t> &data, const KeyRegisters &keys,
-                    const CpuConfig &cfg, const CpuState &ref_state, const std::vector<uint32_t> &ref_mem) {
-    std::vector<uint32_t> dmem;
-    init_dmem(data, dmem);
-    CpuState s;
-    CpuStats st;
-    cryptocpu_top(imem.data(), dmem.data(), &keys, &cfg, &s, &st);
-    if (s.status == ST_TIMEOUT) return 3;
-    if (s.status != ST_HALT) return 0;
-    return same_state(s, dmem, ref_state, ref_mem) ? 2 : 1;
-}
 
 static int distinct_blocks(const std::vector<uint32_t> &img) {
     std::set<std::vector<uint32_t>> s;

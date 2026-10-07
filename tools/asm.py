@@ -153,6 +153,16 @@ def assemble(src):
     seg = "text"
     text_items, data_bytes = [], bytearray()
     pc = TEXT_BASE
+
+    def align_data(alignment):
+        old_addr = DATA_BASE + len(data_bytes)
+        data_bytes.extend(b"\0" * (-len(data_bytes) % alignment))
+        new_addr = DATA_BASE + len(data_bytes)
+        # Inline labels and preceding standalone aliases name the aligned data.
+        for name, addr in labels.items():
+            if addr == old_addr:
+                labels[name] = new_addr
+
     for ln, raw in enumerate(lines, 1):
         s = strip_comment(raw).strip()
         while True:
@@ -179,14 +189,12 @@ def assemble(src):
                 raise AsmError(f"line {ln}: directive {d} only allowed in .data")
             elif d == ".align":
                 a = 1 << parse_int(rest)
-                while len(data_bytes) % a:
-                    data_bytes.append(0)
+                align_data(a)
             elif d == ".space":
                 data_bytes.extend(b"\0" * parse_int(rest))
             elif d in (".word", ".half", ".byte"):
                 size = {".word": 4, ".half": 2, ".byte": 1}[d]
-                while len(data_bytes) % size:
-                    data_bytes.append(0)
+                align_data(size)
                 for tok in split_operands(rest):
                     if ":" in tok and is_int(tok.split(":")[0]):
                         v, cnt = tok.split(":")

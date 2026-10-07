@@ -1,0 +1,376 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-06T13:06:59.423141+00:00",
+  "command": [
+    "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+    "tools/verify.py",
+    "--cxx",
+    ".\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+    "--out",
+    "results/host"
+  ],
+  "platform": "Windows-11-10.0.22631-SP0",
+  "python": "3.13.16 (tags/v3.13.16:cbc944f, Sep 30 2026, 19:17:50) [MSC v.1944 64 bit (AMD64)]",
+  "compiler": "clang version 23.1.1 (https://github.com/llvm/llvm-project.git 6dfe1677ab8dffbc6ec13d53a1e0215d75147689)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/Users/TOM/Downloads/CryptoCPU-main/CryptoCPU-main/_build/toolchain/llvm-mingw-20260908-ucrt-x86_64/bin\nConfiguration file: C:/Users/TOM/Downloads/CryptoCPU-main/CryptoCPU-main/_build/toolchain/llvm-mingw-20260908-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg",
+  "sources_sha256": {
+    "CMakeLists.txt": "141d29bd63afe6ffb232116407b69e837d7a91d623c77da3372cb4d79bc9e5da",
+    "ref/isa_ref.cpp": "03b988fe88d4026b8726834b895be30efcf4a0c63d732940c505ca16fe63824d",
+    "ref/isa_ref.h": "c743ca6be0538fc2cb6e8c5f4e3dfed48dfba13b7bfb3cf0f6e2f458183f435e",
+    "src/aes128.cpp": "b9ad90a189b925f33e684e103c03036ded6da31b1147745237f1db3a5b9e9ed8",
+    "src/aes128.h": "89326e39f889bcf832d6a166f502d93bc76540a06242782357922794d8a91fdf",
+    "src/cryptocpu.cpp": "3bfe8a0ca6b8ddb434266784076c5e4fe068b8f7bae1ca6460a75558e7d52b99",
+    "src/cryptocpu.h": "51ea50bfdda341ea44bfb99265b8f72343c802aebfda8919e7a11ceae8434052",
+    "src/xex.cpp": "0818339730cdf6ab9dffb7e3b43caaa5a05bdbb3a284872776a874b5a02fc154",
+    "tests/aes_kat.cpp": "42111c068bc48f72a5b573c6edc5edfbf2c1db48c31c68cbdec7cc8951d0db57",
+    "tests/cryptocpu_tb.cpp": "ebcaa0dec6a9c0f1673a1f3d2ee5f29e6d4bd83411048d86932803e8b1721c8f",
+    "tests/programs/aes.s": "acb72bf9293dd9cd256aeda4cffdabe143ddb2c53e1a1ba2fdad9ccba8b9e921",
+    "tests/programs/alignment.s": "9873a73dd9edb29f58fcc8718ee458f92e1b5b919f7a532ead8244f85a8f02b5",
+    "tests/programs/bubble.s": "450ffc53a58ecb9924f5f1c56376139335ba1249dae52945bc84666abc2c5584",
+    "tests/programs/fib.s": "e6e7991b65c0ea3e030a466aa053759ed42ecda7448578ba1073288d7910e864",
+    "tests/programs/hazards.s": "e62f9edddba8a19862210ff50e1d459d441582cb6ba8a81dafb4d0401f4555a0",
+    "tests/programs/loop_sum.s": "e0246359e26f010de875fa4d895763c1318b62270e5d34a8a23e70d8826a97b8",
+    "tests/programs/matmul.s": "834db260882a61792b7e3c68fc8dc8dfdc786cf86e45c64bc287b1eb651e5a91",
+    "tests/programs/muldiv.s": "721385872385ff26ab3e070689f836687312785f1c672dcaf91336f1f27a7cc2",
+    "tests/programs/sieve.s": "0485c1f944bce3b429aadbf8b7c94a87efd9cb088e9357da7b5bb2effa79eb0c",
+    "tests/programs/signature.s": "c9f71b1fc57292042997caf6f40c1f0a7768546695f25e9657a0fa6ca3ed9f07",
+    "tests/programs/strings.s": "4460b69f9d00a994ef250a9c56409c1e1909a3d3bb9fea35b9dd3eef2530d7f0",
+    "tests/programs/trap_fetch.s": "6e2b75092abd7f3354e401aded9740171fe922f2c8cebc5ab56ca375be78a058",
+    "tests/programs/trap_misaligned.s": "f6ffc08c928c9d17e1a65f37e419b8cfbc8872c066ca5a608e376d250e9df1f6",
+    "tests/programs/trap_overflow.s": "c462f22b2ee1ce268dd38fa7ebf801819e48a959db928c5d297082a3fdaf929a",
+    "tests/security_common.h": "e7c20522efc7df65d5f10c5e9f6073098c400908b5354589ac1533dfcba81aae",
+    "tests/security_regression.cpp": "9a1435e97e735ceaa9411a2c4578985be167354926bb6dd7fc4d8b4e194cf109",
+    "tests/security_tb.cpp": "dcf15c2fe5b09b962137f66ff6ddc326d74e795541e1b7a8f77268ef10d18bb0",
+    "tests/tb_common.h": "1ccb408088351c22120ed3803b9761dd8866e8d51be708100342b93a3f115686",
+    "tests/tooling_regression.py": "8bda5e59de0f38b3fd923257c3d072d25415f0de8590908d6b69ae6220fad766",
+    "tools/asm.py": "f50e3715a69789193655bcb10ac1d619f590ca2e74d0de30bc3d42fd6dee81cf",
+    "tools/fuzz.py": "a1f863eaf0332f42448cddaa0d99ac62879f483eb0f51f95bfc916da3b1ac0cd",
+    "tools/image_tool.cpp": "3270478a0881efccf97860f09f509a346a7e846a291ef96488b084362f8c4341",
+    "tools/mutate.py": "26cbc679f8452e223240c6dff8469428f85836123bde473414b28f40f8fac73d",
+    "tools/run_tests.py": "bb650e6cc9966abeabb4aea5b0a5b33a8331f1ab59957e316b36f0f42a92990f",
+    "tools/sweep.py": "2badac90d90e7c3524c12d17cbc7496cc2d5d95fcebe207711fde4df00f57602",
+    "tools/verify.py": "3275da30cddd2c59c70bc5106f481d382dbca94ebe4e602328c4e0017acfec26"
+  },
+  "binaries_sha256": {
+    "cryptocpu_tb": "77f90955abdb0eadf275755d5faabc04dcab30ed4ccda060e38e3e1534e510e3",
+    "security_tb": "519390fcebb82e817fe3f53947b86aec0e5d539b26f533f70b21ea4497e8bacd",
+    "aes_kat": "f1d8fa084910525bb8ca90fe0bcf9690f853249d7f6ebc5da6893cc169f21b0f",
+    "image_tool": "876973f72c40bc86496e2ae083027076e5ceea7297dfff146125f510aa6e6904",
+    "security_regression": "3e2ed7d7688279b9a5de1fced055d338edc2cf5bd32e0dfe391a49ca984f554d"
+  },
+  "steps": [
+    {
+      "name": "compile_aes128",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "-c",
+        "src/aes128.cpp",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o"
+      ],
+      "log": "compile_aes128.txt",
+      "returncode": 0,
+      "seconds": 0.106
+    },
+    {
+      "name": "compile_xex",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "-c",
+        "src/xex.cpp",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o"
+      ],
+      "log": "compile_xex.txt",
+      "returncode": 0,
+      "seconds": 0.055
+    },
+    {
+      "name": "compile_cryptocpu",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "-c",
+        "src/cryptocpu.cpp",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o"
+      ],
+      "log": "compile_cryptocpu.txt",
+      "returncode": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "compile_isa_ref",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "-c",
+        "ref/isa_ref.cpp",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o"
+      ],
+      "log": "compile_isa_ref.txt",
+      "returncode": 0,
+      "seconds": 0.074
+    },
+    {
+      "name": "build_cryptocpu_tb",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "tests/cryptocpu_tb.cpp",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o",
+        "-static",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\cryptocpu_tb.exe"
+      ],
+      "log": "build_cryptocpu_tb.txt",
+      "returncode": 0,
+      "seconds": 0.588
+    },
+    {
+      "name": "build_security_tb",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "tests/security_tb.cpp",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o",
+        "-static",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\security_tb.exe"
+      ],
+      "log": "build_security_tb.txt",
+      "returncode": 0,
+      "seconds": 0.618
+    },
+    {
+      "name": "build_aes_kat",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "tests/aes_kat.cpp",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o",
+        "-static",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\aes_kat.exe"
+      ],
+      "log": "build_aes_kat.txt",
+      "returncode": 0,
+      "seconds": 0.118
+    },
+    {
+      "name": "build_image_tool",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "tools/image_tool.cpp",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o",
+        "-static",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\image_tool.exe"
+      ],
+      "log": "build_image_tool.txt",
+      "returncode": 0,
+      "seconds": 0.673
+    },
+    {
+      "name": "build_security_regression",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unknown-pragmas",
+        "-Isrc",
+        "-Iref",
+        "tests/security_regression.cpp",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\aes128.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\xex.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\cryptocpu.o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\host_objects\\isa_ref.o",
+        "-static",
+        "-o",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\security_regression.exe"
+      ],
+      "log": "build_security_regression.txt",
+      "returncode": 0,
+      "seconds": 0.402
+    },
+    {
+      "name": "aes_kat",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\aes_kat.exe"
+      ],
+      "log": "aes_kat.txt",
+      "returncode": 0,
+      "seconds": 0.02
+    },
+    {
+      "name": "tooling_regression",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+        "tests/tooling_regression.py",
+        "--image-tool",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\image_tool.exe",
+        "-v"
+      ],
+      "log": "tooling_regression.txt",
+      "returncode": 0,
+      "seconds": 0.173
+    },
+    {
+      "name": "security_regression",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\security_regression.exe"
+      ],
+      "log": "security_regression.txt",
+      "returncode": 0,
+      "seconds": 0.01
+    },
+    {
+      "name": "functional_tests",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+        "tools/run_tests.py",
+        "--bin",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\cryptocpu_tb.exe"
+      ],
+      "log": "functional_tests.txt",
+      "returncode": 0,
+      "seconds": 0.833
+    },
+    {
+      "name": "fuzz",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+        "tools/fuzz.py",
+        "--count",
+        "1000",
+        "--seed",
+        "2026",
+        "--bin",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\cryptocpu_tb.exe"
+      ],
+      "log": "fuzz.txt",
+      "returncode": 0,
+      "seconds": 26.434
+    },
+    {
+      "name": "security",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\security_tb.exe",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\signature",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\loop_sum",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\fib",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\bubble",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\strings",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\muldiv",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\aes",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\hazards",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\sieve",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\progs\\matmul",
+        "--flips",
+        "500",
+        "--seed",
+        "1"
+      ],
+      "log": "security.txt",
+      "returncode": 0,
+      "seconds": 0.076
+    },
+    {
+      "name": "mutation",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+        "tools/mutate.py",
+        "--cxx",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\llvm-mingw-20260908-ucrt-x86_64\\bin\\clang++.exe",
+        "--count",
+        "100",
+        "--seed",
+        "7"
+      ],
+      "log": "mutation.txt",
+      "returncode": 0,
+      "seconds": 74.498
+    },
+    {
+      "name": "performance",
+      "command": [
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\_build\\toolchain\\python\\python.exe",
+        "tools/sweep.py",
+        "--bin",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\build\\cryptocpu_tb.exe",
+        "--out",
+        "C:\\Users\\TOM\\Downloads\\CryptoCPU-main\\CryptoCPU-main\\results\\host"
+      ],
+      "log": "performance.txt",
+      "returncode": 0,
+      "seconds": 0.679
+    }
+  ],
+  "hardware_validation": "not assessed by this host run",
+  "finished_utc": "2026-10-06T13:08:45.005527+00:00"
+}

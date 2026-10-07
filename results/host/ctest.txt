@@ -1,0 +1,13 @@
+Test project C:/Users/TOM/Downloads/CryptoCPU-main/CryptoCPU-main/_build/cmake-check
+    Start 1: aes_kat
+1/4 Test #1: aes_kat ..........................   Passed    0.01 sec
+    Start 2: security_regression
+2/4 Test #2: security_regression ..............   Passed    0.01 sec
+    Start 3: tooling_regression
+3/4 Test #3: tooling_regression ...............   Passed    0.18 sec
+    Start 4: functional_tests
+4/4 Test #4: functional_tests .................   Passed    0.84 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   1.05 sec

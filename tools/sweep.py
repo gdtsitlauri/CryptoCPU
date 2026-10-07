@@ -6,10 +6,11 @@ For every halting test program it measures cycles and CPI
   - without encryption (baseline, same pipeline and cache),
   - with AES-XEX at the paper design point (8 lines, 11-cycle AES, 4-cycle memory),
   - while varying the number of decrypted lines (1..64) and the AES latency.
-Writes results/perf.csv and results/perf.md.
+Writes perf.csv and perf.md under results/local/performance/ by default.
 
     python tools/sweep.py
 """
+import argparse
 import csv
 import subprocess
 import sys
@@ -31,7 +32,11 @@ def run(tb, prog, opts):
 
 
 def main():
-    tb = find_tb(None)
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--bin", help="path to cryptocpu_tb")
+    ap.add_argument("--out", type=Path, default=ROOT / "results" / "local" / "performance")
+    args = ap.parse_args()
+    tb = find_tb(args.bin)
     rows = []
     for p in PROGRAMS:
         base_c, ret, _ = run(tb, p, ["--plain"])
@@ -47,8 +52,8 @@ def main():
             row[f"cpi_aes{lat}"] = round(c / ret, 3)
         rows.append(row)
 
-    out = ROOT / "results"
-    out.mkdir(exist_ok=True)
+    out = args.out
+    out.mkdir(parents=True, exist_ok=True)
     with open(out / "perf.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader()

@@ -1,4 +1,4 @@
-// CryptoCPU v2 core: six-stage in-order pipeline
+// CryptoCPU core: six-stage in-order pipeline
 //
 //   IF  - PC generation, ciphertext block request
 //   DC  - decrypted-line lookup; on a miss the AES-XEX unit decrypts the block
@@ -8,7 +8,7 @@
 //   MEM - data memory, aesenc / aesdec (multi-cycle)
 //   WB  - register write-back, retirement, precise halt and traps
 //
-// The model is cycle-level: every iteration of the main loop is one clock.
+// Every main-loop iteration is one modeled pipeline cycle, not an HLS clock.
 // Branches are predicted not taken and resolved in EX (3-cycle penalty); there
 // are no delay slots (MARS default). Exceptions are precise: an instruction
 // that faults is marked, younger instructions are squashed, and the run ends
@@ -168,7 +168,7 @@ void cryptocpu_top(const uint32_t imem[IMEM_WORDS], uint32_t dmem[DMEM_WORDS],
 #pragma HLS INTERFACE mode=s_axilite port=stats
 #pragma HLS INTERFACE mode=s_axilite port=return
 
-    // Key schedules are expanded once at reset and kept on chip.
+    // Key schedules are expanded once per invocation, before cycle accounting.
     AesRoundKeys rk_code, rk_tweak, rk_data;
     aes128_expand_key(keys->k_code, &rk_code);
     aes128_expand_key(keys->k_tweak, &rk_tweak);
@@ -180,7 +180,7 @@ void cryptocpu_top(const uint32_t imem[IMEM_WORDS], uint32_t dmem[DMEM_WORDS],
     regs[29] = STACK_TOP;
     uint32_t hi = 0, lo = 0;
 
-    // Decrypted-instruction cache: the only place plaintext instructions exist.
+    // Plaintext instructions stay in the internal cache, temporaries and pipeline.
     bool ic_valid[ICACHE_MAX_LINES];
     uint32_t ic_tag[ICACHE_MAX_LINES];
     uint32_t ic_data[ICACHE_MAX_LINES][BLOCK_WORDS];
