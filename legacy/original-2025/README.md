@@ -1,9 +1,7 @@
 # Original CryptoCPU work — 2025
 
-The sources, assembly, memory images and thesis of the 2025 BSc thesis, unchanged.
-
-- [Thesis (PDF)](thesis/Thesis.pdf) and [Word document](thesis/CryptoCPU_BSc_Thesis.docx)
-- [SHA-256 checksums](SHA256SUMS.txt)
+The sources, assembly and memory images of the 2025 BSc thesis, unchanged;
+[SHA256SUMS.txt](SHA256SUMS.txt) records their hashes.
 
 | file | role |
 | --- | --- |

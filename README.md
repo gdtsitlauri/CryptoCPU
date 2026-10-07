@@ -216,7 +216,3 @@ George David Tsitlauri, *Design and implementation of an encrypted instruction
 set processor on FPGA*, BSc thesis, Department of Informatics and
 Telecommunications, University of Thessaly, 2025. Supervisor: Georgios Dimitriou.
 Please cite the thesis when referring to this work.
-
-The [original thesis PDF](legacy/original-2025/thesis/Thesis.pdf) and
-[Word document](legacy/original-2025/thesis/CryptoCPU_BSc_Thesis.docx) are preserved
-in the archive.
