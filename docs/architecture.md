@@ -1,9 +1,8 @@
 # CryptoCPU architecture
 
-CryptoCPU implements the original 2025 thesis idea: instruction ciphertext
-is read from memory, decrypted inside the processor and reused from an internal
-instruction cache. The current implementation makes the instruction encodings,
-memory interfaces and validation explicit.
+CryptoCPU reads instruction ciphertext from memory, decrypts it inside the
+processor and reuses it from an internal instruction cache, with explicit
+instruction encodings, memory interfaces and validation.
 
 ## Execution path
 
@@ -94,17 +93,8 @@ tweaks disrupt repeated-block patterns and simple relocation, but exceptions
 after tampering are not cryptographic integrity checks. Replay, access-pattern
 leakage and physical side channels are outside the evaluated protection.
 
-## Continuity with the original work
+## Design choices
 
-| Original design aim | Current implementation |
-| --- | --- |
-| Execute encrypted instructions | AES-128 instruction blocks decrypted by the DC stage |
-| Keep plaintext inside the processor | Read-only instruction input and internal decrypted cache/pipeline |
-| Limit decryption cost | Cache hits reuse already decrypted instruction blocks |
-| Provide processor AES operations | Separate-key `aesenc` and `aesdec` data instructions |
-| Target an FPGA workflow | Fixed-size C++ arrays and HLS interfaces, with a documented integration procedure |
-
-The main improvements are standard subset decoding, separate keys,
-address-dependent encryption and comparison against a reference interpreter.
-Assembler alignment, malformed key files and incomplete tamper-result
-comparison have targeted regression coverage.
+Standard subset decoding, separate keys, address-dependent encryption and
+comparison against a reference interpreter. Assembler alignment, malformed key
+files and incomplete tamper-result comparison have targeted regression coverage.

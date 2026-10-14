@@ -10,19 +10,17 @@ chip, at a small cost in performance?**
 CryptoCPU models a pipelined processor for a MIPS32 subset that executes encrypted
 programs. Instruction memory holds the program encrypted with AES-128; blocks are
 decrypted inside the core, in a dedicated Decrypt stage, into an internal cache
-of decrypted instructions. The model keeps instruction memory read-only and does
-not write decrypted instruction blocks to data memory. The original idea remains:
-keep stored instructions encrypted, decrypt them inside the processor, and reuse
-cached instructions to reduce the cost of AES.
+of decrypted instructions. Instruction memory is read-only and decrypted
+instructions never leave the processor: stored instructions stay encrypted, are
+decrypted inside the core, and cached instructions are reused to reduce the cost
+of AES.
 
 The core is written in C++ for Vitis HLS, with HLS pragmas, fixed-size arrays and
 no dynamic memory in the core. It is evaluated with a cycle-level C simulation,
 a sequential reference interpreter and a set of security experiments. Read the
 [paper](paper/cryptocpu.pdf), its [LaTeX source](paper/cryptocpu.tex), the
 [architecture](docs/architecture.md), and the
-[Vitis / Vivado integration flow](docs/hardware-flow.md). The FPGA results come
-from the 2025 thesis prototype; the present implementation extends it with XEX
-encryption, separate memories, standard MIPS32 encodings and a full verification suite.
+[Vitis / Vivado integration flow](docs/hardware-flow.md).
 
 All reported numbers come from the host checks described below. The
 [recorded run](results/host/README.md) contains the logs; its
@@ -109,8 +107,8 @@ tool versions and source/binary hashes.
   hardware provisioning and access control define physical key protection.
 - Cycle counts come from the pipeline model. Multiply/divide take one modeled
   cycle, memory and AES delays are parameters, and setup/key expansion precede
-  cycle accounting. The FPGA figures are those of the thesis prototype; for the
-  present configuration the paper gives estimates. The
+  cycle accounting. For the present configuration the paper gives FPGA resource
+  estimates. The
   [integration flow](docs/hardware-flow.md) describes the Vitis / Vivado steps.
 - `aesenc` and `aesdec` use a separate data key. They do not expose decryption
   under the code key; ordinary data memory is otherwise unencrypted.

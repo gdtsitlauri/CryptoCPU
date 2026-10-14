@@ -6,11 +6,10 @@ George David Tsitlauri, University of Thessaly, 2026.
 - [cryptocpu.tex](cryptocpu.tex): editable LaTeX source.
 - [references.bib](references.bib): bibliography.
 
-The paper presents CryptoCPU, which builds on the 2025 BSc thesis. Its verification and
-performance tables come from the [recorded host run](../results/host/README.md),
-whose manifest retains the verification dates and source hashes. Section V gives
-the FPGA implementation of the thesis prototype on an Artix-7, with resource
-estimates for the present configuration.
+The paper presents CryptoCPU. Its verification and performance tables come from the
+[recorded host run](../results/host/README.md), whose manifest retains the
+verification dates and source hashes. Section V gives the FPGA figures on an
+Artix-7 and resource estimates for the present configuration.
 
 The document uses the standard `IEEEtran` conference class on A4, two columns and
 numbered citations, following the

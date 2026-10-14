@@ -1,5 +1,4 @@
-# The original CryptoCPU v1 demo. In v1 the value 0x15 was precomputed by MARS
-# and only checked; here the processor computes it from the encrypted program.
+# Signature program: the processor computes the value 0x15 from the encrypted program.
 # EXPECT status halt
 # EXPECT mem signature 0x15
         .data

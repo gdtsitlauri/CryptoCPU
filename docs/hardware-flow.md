@@ -1,10 +1,9 @@
 # Vitis HLS, Vivado and board integration
 
-This chapter describes the implementation procedure for the CryptoCPU sources:
-the flow that took the thesis prototype from C++ to an Artix-7 XC7A200T (AC701
-board), where it met timing at 75 MHz and ran the encrypted program. Its
-measured figures, and resource estimates for the present configuration, are in
-Section V of the [paper](../paper/cryptocpu.pdf). The host tests and cycle-model
+This chapter describes the Vitis HLS and Vivado procedure for the CryptoCPU
+sources on an Artix-7 XC7A200T (AC701 board). The FPGA figures and the resource
+estimates for the present configuration are in Section V of the
+[paper](../paper/cryptocpu.pdf). The host tests and cycle-model
 experiments are in the [verification notes](validation.md).
 
 ```mermaid

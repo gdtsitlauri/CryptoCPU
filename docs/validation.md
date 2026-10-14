@@ -3,8 +3,8 @@
 The [recorded report](../results/host/README.md) is the evidence behind the paper
 and main README. Its [manifest](../results/host/manifest.json) records actual
 execution timestamps, commands, compiler/Python versions and SHA-256 hashes of
-the source files and binaries. The thesis year is 2025; verification timestamps
-identify when a particular source snapshot was checked.
+the source files and binaries. Verification timestamps identify when a
+particular source snapshot was checked.
 
 ## Reproduce the complete run
 
