@@ -98,5 +98,4 @@ ctest --test-dir build -C Release --output-on-failure
 
 With Python found, CTest registers four tests: AES, security classification,
 tooling regression and directed programs. The [recorded CTest log](../results/host/ctest.txt)
-contains the outcome of the separate CMake build. Earlier logs and historical
-review notes are preserved in [legacy](../legacy/README.md).
+contains the outcome of the separate CMake build.

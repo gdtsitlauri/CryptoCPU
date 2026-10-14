@@ -20,9 +20,9 @@ no dynamic memory in the core. It is evaluated with a cycle-level C simulation,
 a sequential reference interpreter and a set of security experiments. Read the
 [paper](paper/cryptocpu.pdf), its [LaTeX source](paper/cryptocpu.tex), the
 [architecture](docs/architecture.md), and the
-[Vitis / Vivado integration flow](docs/hardware-flow.md). The
-[2025 thesis sources](legacy/README.md) are preserved in `legacy/`, with a
-[summary of what changed since](legacy/CHANGES.md).
+[Vitis / Vivado integration flow](docs/hardware-flow.md). The FPGA results come
+from the 2025 thesis prototype; the present implementation extends it with XEX
+encryption, separate memories, standard MIPS32 encodings and a full verification suite.
 
 All reported numbers come from the host checks described below. The
 [recorded run](results/host/README.md) contains the logs; its
@@ -130,9 +130,6 @@ CryptoCPU/
   docs/         architecture, verification and Vitis / Vivado integration
   results/
     host/       recorded logs, performance data and verification manifest
-  legacy/
-    original-2025/     the 2025 thesis sources and memory images
-    CHANGES.md         what changed since 2025, and why
 ```
 
 `build/`, `_build/` and `results/local/` hold ignored local outputs and tools.

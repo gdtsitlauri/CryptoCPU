@@ -40,5 +40,4 @@ pdflatex cryptocpu
 pdflatex cryptocpu
 ```
 
-Generated auxiliary files are ignored. The checked-in PDF is the reading copy;
-the 2025 thesis sources are in [legacy](../legacy/README.md).
+Generated auxiliary files are ignored. The checked-in PDF is the reading copy.

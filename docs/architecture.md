@@ -107,5 +107,4 @@ leakage and physical side channels are outside the evaluated protection.
 The main improvements are standard subset decoding, separate keys,
 address-dependent encryption and comparison against a reference interpreter.
 Assembler alignment, malformed key files and incomplete tamper-result
-comparison have targeted regression coverage. The [archive](../legacy/README.md)
-retains the 2025 implementation; [CHANGES.md](../legacy/CHANGES.md) explains the differences.
+comparison have targeted regression coverage.
