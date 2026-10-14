@@ -209,13 +209,10 @@ interfaces, co-simulation and board result checks.
 
 ## Citation and license
 
-When referring to this work, please cite the paper and the thesis it builds on:
+When referring to this work, please cite the paper:
 
 - George David Tsitlauri, "Design and implementation of an encrypted instruction
   set processor on FPGA," University of Thessaly, 2026
   ([paper](paper/cryptocpu.pdf)).
-- George David Tsitlauri, *Design and implementation of an encrypted instruction
-  set processor on FPGA*, BSc thesis, Department of Informatics and
-  Telecommunications, University of Thessaly, 2025. Supervisor: Georgios Dimitriou.
 
 MIT license ([LICENSE](LICENSE)).

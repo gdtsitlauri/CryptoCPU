@@ -43,8 +43,7 @@ encrypted instructions, AES-128, XEX, processor pipeline, FPGA, high-level synth
 
 \section{Introduction}
 CryptoCPU studies encrypted execution with a decryption stage between fetch
-and decode. Its central idea, originating in the 2025 BSc thesis~\cite{thesis},
-is to retain ciphertext in instruction storage, decrypt blocks inside the core,
+and decode. Its central idea is to retain ciphertext in instruction storage, decrypt blocks inside the core,
 and cache recovered instructions so that loops amortize the cryptographic work.
 The design comprises a six-stage pipeline, separate instruction and data
 memories and an assembly/encryption toolchain. Standard subset encodings, separate keys and reference
