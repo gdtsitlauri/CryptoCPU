@@ -1,9 +1,5 @@
 # CryptoCPU
 
-**Design and implementation of an encrypted instruction set processor on FPGA**
-
-George David Tsitlauri · University of Thessaly · 2026
-
 **Can a processor run programs that exist only in encrypted form, outside its own
 chip, at a small cost in performance?**
 
