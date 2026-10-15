@@ -211,4 +211,7 @@ When referring to this work, please cite the paper:
   set processor on FPGA," University of Thessaly, 2026
   ([paper](paper/cryptocpu.pdf)).
 
+Supervisor: Georgios Dimitriou, University of Thessaly, who also supervised the 2025 B.Sc. thesis whose FPGA
+figures the paper reports.
+
 MIT license ([LICENSE](LICENSE)).
