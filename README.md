@@ -211,9 +211,8 @@ When referring to this work, please cite the paper:
   encrypted instruction set processor on FPGA," University of Thessaly, 2026
   ([paper](paper/cryptocpu.pdf)).
 
-Georgios Dimitriou (Assistant Professor, director of the Computer Architecture, Compilers and System Security
-Laboratory, CACS Lab, Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece)
-supervised this work and the 2025 B.Sc. thesis whose FPGA figures the paper reports. Citation metadata in
-[CITATION.cff](CITATION.cff).
+Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia,
+Greece. Assistant Prof. Georgios Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
+paper reports. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).
