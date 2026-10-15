@@ -207,12 +207,12 @@ interfaces, co-simulation and board result checks.
 
 When referring to this work, please cite the paper:
 
-- George David Tsitlauri and Georgios Dimitriou, "Design and implementation of an
+- George David Tsitlauri and George Dimitriou, "Design and implementation of an
   encrypted instruction set processor on FPGA," University of Thessaly, 2026
   ([paper](paper/cryptocpu.pdf)).
 
 Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia,
-Greece. Georgios Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
+Greece. George Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
 paper reports. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).

@@ -1,6 +1,6 @@
 # Design and implementation of an encrypted instruction set processor on FPGA
 
-George David Tsitlauri and Georgios Dimitriou, Department of Informatics and Telecommunications, University of
+George David Tsitlauri and George Dimitriou, Department of Informatics and Telecommunications, University of
 Thessaly, Lamia, Greece, 2026.
 
 - [cryptocpu.pdf](cryptocpu.pdf): the paper in IEEE conference style (three pages and references).
