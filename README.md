@@ -205,14 +205,34 @@ interfaces, co-simulation and board result checks.
 
 ## Citation and license
 
-When referring to this work, please cite the paper:
+When referring to this work, please cite the paper. The FPGA figures come from the B.Sc. thesis it builds on.
 
-- George David Tsitlauri and George Dimitriou, "Design and implementation of an
-  encrypted instruction set processor on FPGA," University of Thessaly, 2026
-  ([paper](paper/cryptocpu.pdf)).
+- **Paper (2026):** George David Tsitlauri and George Dimitriou, "Design and implementation of an encrypted
+  instruction set processor on FPGA," University of Thessaly, 2026 ([paper](paper/cryptocpu.pdf)).
+- **B.Sc. thesis (2025, in Greek):** George David Tsitlauri, *Design and implementation of an encrypted instruction
+  set processor on FPGA*, B.Sc. thesis, Department of Informatics and Telecommunications, University of Thessaly,
+  2025. Supervisor: George Dimitriou.
 
-Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia,
-Greece. George Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
-paper reports. Citation metadata in [CITATION.cff](CITATION.cff).
+```bibtex
+@misc{tsitlauri2026cryptocpu,
+  author       = {George David Tsitlauri and George Dimitriou},
+  title        = {Design and implementation of an encrypted instruction set processor on {FPGA}},
+  year         = {2026},
+  note         = {Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece},
+  howpublished = {\url{https://github.com/gdtsitlauri/CryptoCPU/blob/main/paper/cryptocpu.pdf}}
+}
+
+@mastersthesis{tsitlauri2025thesis,
+  author = {George David Tsitlauri},
+  title  = {Design and implementation of an encrypted instruction set processor on {FPGA}},
+  school = {Department of Informatics and Telecommunications, University of Thessaly},
+  type   = {B.Sc. thesis},
+  year   = {2025},
+  note   = {In Greek. Supervisor: George Dimitriou}
+}
+```
+
+Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece.
+George Dimitriou supervised the paper and the thesis. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).
