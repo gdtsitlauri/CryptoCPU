@@ -215,12 +215,12 @@ When referring to this work, please cite the paper:
   author       = {George David Tsitlauri and George Dimitriou},
   title        = {Design and implementation of an encrypted instruction set processor on {FPGA}},
   year         = {2026},
-  note         = {Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece},
+  note         = {Department of Informatics and Telecommunications, University of Thessaly, Greece},
   howpublished = {\url{https://github.com/gdtsitlauri/CryptoCPU/blob/main/paper/cryptocpu.pdf}}
 }
 ```
 
-Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece.
+Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Greece.
 George Dimitriou supervised this work. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).
