@@ -299,8 +299,8 @@ measured model advantage comes from locality and reuse; it does not predict
 the overhead of arbitrary applications or a specific AES hardware design.
 
 \section{FPGA Implementation}
-\subsection{Thesis Prototype}
-The thesis prototype~\cite{thesis} followed the complete Vitis HLS and Vivado
+\subsection{Earlier Prototype}
+An earlier prototype of this design~\cite{thesis} followed the complete Vitis HLS and Vivado
 flow~\cite{hls,vivado}. C simulation executed the encrypted demonstration
 program and passed its signature check; C synthesis produced the RTL, and
 C/RTL co-simulation reproduced the C-simulation signature, register dump and
@@ -322,7 +322,7 @@ decrypted instruction blocks with AES-128 in ECB mode.
 \small
 \begin{tabular}{@{}lrr@{}}
 \toprule
-Quantity & Thesis prototype & CryptoCPU \\
+Quantity & Earlier prototype & CryptoCPU \\
  & (measured) & (estimated) \\
 \midrule
 Clock & 75~MHz & 75~MHz \\

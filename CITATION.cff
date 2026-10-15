@@ -15,5 +15,5 @@ repository-code: "https://github.com/gdtsitlauri/CryptoCPU"
 abstract: >-
   A six-stage, in-order MIPS32-subset processor that executes AES-128-encrypted programs. Address-dependent
   AES-XEX protects instruction blocks, an internal cache reuses decrypted instructions, and code, tweak and
-  data-operation keys are separate. Built on a 2025 B.Sc. thesis whose prototype ran on an Artix-7 FPGA.
+  data-operation keys are separate. An earlier prototype of the design ran on an Artix-7 FPGA.
 keywords: [encrypted execution, AES-128, XEX, processor pipeline, FPGA, high-level synthesis, hardware security]

@@ -81,7 +81,7 @@ tool versions and source/binary hashes.
    ([tooling log](results/host/tooling_regression.txt),
    [classification log](results/host/security_regression.txt)).
 
-9. **The thesis prototype ran on an Artix-7 FPGA.** It went through the full
+9. **An earlier prototype of this design ran on an Artix-7 FPGA.** It went through the full
    Vitis HLS and Vivado flow (C simulation, synthesis, C/RTL co-simulation, IP
    packaging, block design and implementation) on an AMD Artix-7 XC7A200T
    (AC701 board). Timing closed at 75 MHz with about 15% of the LUTs, 10% of the
@@ -205,13 +205,10 @@ interfaces, co-simulation and board result checks.
 
 ## Citation and license
 
-When referring to this work, please cite the paper. The FPGA figures come from the B.Sc. thesis it builds on.
+When referring to this work, please cite the paper:
 
-- **Paper (2026):** George David Tsitlauri and George Dimitriou, "Design and implementation of an encrypted
-  instruction set processor on FPGA," University of Thessaly, 2026 ([paper](paper/cryptocpu.pdf)).
-- **B.Sc. thesis (2025, in Greek):** George David Tsitlauri, *Design and implementation of an encrypted instruction
-  set processor on FPGA*, B.Sc. thesis, Department of Informatics and Telecommunications, University of Thessaly,
-  2025. Supervisor: George Dimitriou.
+- George David Tsitlauri and George Dimitriou, "Design and implementation of an encrypted instruction set processor
+  on FPGA," University of Thessaly, 2026 ([paper](paper/cryptocpu.pdf)).
 
 ```bibtex
 @misc{tsitlauri2026cryptocpu,
@@ -221,18 +218,9 @@ When referring to this work, please cite the paper. The FPGA figures come from t
   note         = {Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece},
   howpublished = {\url{https://github.com/gdtsitlauri/CryptoCPU/blob/main/paper/cryptocpu.pdf}}
 }
-
-@mastersthesis{tsitlauri2025thesis,
-  author = {George David Tsitlauri},
-  title  = {Design and implementation of an encrypted instruction set processor on {FPGA}},
-  school = {Department of Informatics and Telecommunications, University of Thessaly},
-  type   = {B.Sc. thesis},
-  year   = {2025},
-  note   = {In Greek. Supervisor: George Dimitriou}
-}
 ```
 
 Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece.
-George Dimitriou supervised the paper and the thesis. Citation metadata in [CITATION.cff](CITATION.cff).
+George Dimitriou supervised this work. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).
