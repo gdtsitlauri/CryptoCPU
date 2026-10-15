@@ -212,7 +212,7 @@ When referring to this work, please cite the paper:
   ([paper](paper/cryptocpu.pdf)).
 
 Both authors are with the Department of Informatics and Telecommunications, University of Thessaly, Lamia,
-Greece. Assistant Prof. Georgios Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
+Greece. Georgios Dimitriou supervised this work and the 2025 B.Sc. thesis whose FPGA figures the
 paper reports. Citation metadata in [CITATION.cff](CITATION.cff).
 
 MIT license ([LICENSE](LICENSE)).
