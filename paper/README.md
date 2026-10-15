@@ -1,6 +1,7 @@
 # Design and implementation of an encrypted instruction set processor on FPGA
 
-George David Tsitlauri, University of Thessaly, 2026.
+George David Tsitlauri and Georgios Dimitriou, Computer Architecture, Compilers and System Security Laboratory
+(CACS Lab), Department of Informatics and Telecommunications, University of Thessaly, Lamia, Greece, 2026.
 
 - [cryptocpu.pdf](cryptocpu.pdf): the paper in IEEE conference style (three pages and references).
 - [cryptocpu.tex](cryptocpu.tex): editable LaTeX source.
